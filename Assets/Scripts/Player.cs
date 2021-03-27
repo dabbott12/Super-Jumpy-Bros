@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Game game;
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        game = FindObjectOfType<Game>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -41,9 +35,13 @@ public class Player : MonoBehaviour
     {
         Destroy(enemy.gameObject);
         yield return new WaitForEndOfFrame();
+
+        game.AddPoints(enemy.pointValue);
     }
     void Hurt()
     {
         Destroy(this.gameObject);
+
+        game.LoseLife();
     }
 }
