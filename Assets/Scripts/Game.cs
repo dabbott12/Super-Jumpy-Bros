@@ -7,14 +7,21 @@ public class Game : MonoBehaviour
 {
     public int lives;
     public int score;
+
     [SerializeField]
     private Player player;
+
     [SerializeField]
     private Transform playerSpawnPoint;
+
     [SerializeField]
     private Spawner[] spawners;
+
     [SerializeField]
     private int level;
+
+    private string nextLevel;
+
 
     public void LoseLife()
     {
@@ -25,14 +32,14 @@ public class Game : MonoBehaviour
 
         else
         {
-
+            Debug.Log("Game Over");
         }
     }
 
     IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(2f);
         lives--;
+        yield return new WaitForSeconds(2f);
         Instantiate(player.gameObject, playerSpawnPoint.position, Quaternion.identity);
     }
 
@@ -59,11 +66,11 @@ public class Game : MonoBehaviour
 
     private void CompleteLevel()
     {
-        level++;
+        nextLevel = "Assets/Scenes/Level " + (level + 1) + ".unity";
 
-        if (SceneManager.GetSceneAt(level) == null)
+        if (SceneUtility.GetBuildIndexByScenePath(nextLevel) >= 0)
         {
-            SceneManager.LoadScene(level);
+            SceneManager.LoadSceneAsync(++level);
         }
 
         else

@@ -6,11 +6,12 @@ public class Enemy : MonoBehaviour
 {
     public int pointValue;
     private Rigidbody2D rig;
+
     [SerializeField]
     private float speed;
+
     private Vector2 movementDirection;
 
-    // Start is called before the first frame update
     void Awake()
     {
         rig = GetComponent<Rigidbody2D>();

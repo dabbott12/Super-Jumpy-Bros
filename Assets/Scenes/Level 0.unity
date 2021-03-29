@@ -1851,12 +1851,6 @@ MonoBehaviour:
   enemies:
   - {fileID: 6252514194346522012, guid: 7a1570b3c9a275342a89e39fc0c1e1e7, type: 3}
   - {fileID: 6252514194346522012, guid: 7a1570b3c9a275342a89e39fc0c1e1e7, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   spawnTimeDelay: 2
   startSpawnDelay: 3
   completed: 0

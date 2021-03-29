@@ -6,10 +6,13 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField]
     private Enemy[] enemies;
+    
     [SerializeField]
     private float spawnTimeDelay;
+
     [SerializeField]
     private float startSpawnDelay;
+    
     public bool completed;
 
     // Start is called before the first frame update
@@ -31,7 +34,6 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < enemies.Length; i++)
         {
             Enemy enemyInstance = Instantiate(enemies[i], transform.position, Quaternion.identity);
-            enemyInstance.Move(transform.right);
             
             if (i >= (enemies.Length - 1))
             {
