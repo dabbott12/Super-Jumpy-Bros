@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6252514194346522003}
   - component: {fileID: 3696313298001980205}
   m_Layer: 0
-  m_Name: EnemyFast
+  m_Name: EnemyLeftFast
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointValue: 300
   speed: 5
+  movementDirection: {x: -1, y: 0}
 --- !u!114 &1625261608114204765
 MonoBehaviour:
   m_ObjectHideFlags: 0
