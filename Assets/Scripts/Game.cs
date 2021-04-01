@@ -94,17 +94,13 @@ public class Game : MonoBehaviour
         {
             foreach (Spawner spawner in spawners)
             {
-                if (spawner.completed)
+                if (!spawner.completed)
                 {
-                    numberOfSpawnersCompleted.Add(spawner);
-                    
+                    return;
                 }
             }
 
-            if (numberOfSpawnersCompleted.Count >= spawners.Length)
-            {
-                CompleteLevel();
-            }
+            CompleteLevel();
         }
     }
 
