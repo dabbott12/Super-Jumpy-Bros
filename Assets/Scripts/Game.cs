@@ -36,6 +36,12 @@ public class Game : MonoBehaviour
     [SerializeField]
     private List<Spawner> numberOfSpawnersCompleted;
 
+    [SerializeField]
+    private int coinValue;
+
+    [SerializeField]
+    private int gemValue;
+
     private void Start()
     { 
         highScore = PlayerPrefs.GetInt("HighScore", 0);
@@ -44,6 +50,16 @@ public class Game : MonoBehaviour
         highScoreText.SetText("High score: " + highScore);
 
         UpdateHUD();
+    }
+
+    public int GetCoinValue()
+    {
+        return coinValue;
+    }
+
+    public int GetGemValue()
+    {
+        return gemValue;
     }
 
     void EndGame()
@@ -86,6 +102,12 @@ public class Game : MonoBehaviour
         UpdateHUD();
 
         CheckForLevelCompletion();
+    }
+
+    public void AddLives(int lives)
+    {
+        this.lives += lives;
+        UpdateHUD();
     }
 
     private void CheckForLevelCompletion()

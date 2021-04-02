@@ -45,6 +45,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   score: 0
+  highScore: 0
   player: {fileID: 0}
   playerSpawnPoint: {fileID: 0}
+  spawners: []
   level: 0
+  livesText: {fileID: 0}
+  scoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
+  numberOfSpawnersCompleted: []
+  coinValue: 50
+  gemValue: 1
